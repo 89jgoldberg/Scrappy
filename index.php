@@ -120,6 +120,7 @@ if (isset($_REQUEST['url']) && strlen($_REQUEST['url'])!==0) {
 		exit; // Mission accomplished!
 
 	} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='plain'){
+		// Set MIME to Plaintext
 		header("Content-Type:text/plain; charset=UTF-8");
 		if (isset($_REQUEST['resp']) && $_REQUEST['resp']=='true') {
 			echo $headers;
@@ -129,21 +130,23 @@ if (isset($_REQUEST['url']) && strlen($_REQUEST['url'])!==0) {
 		exit; // Mission accomplished!
 	} else {
 		if (isset($_REQUEST['resp']) && $_REQUEST['resp']=='true') {
+			header('Content-Type: text/html'); // Set MIME Header
+			// Generate CSS & HTML Table
 			echo '<style>table{width:100%;} table, th, td {border: 1px solid black;border-collapse: collapse;padding:5px;} td.string{color:DarkGoldenRod;} td.integer{color:DarkBlue ;}  td.double{color:Tomato;} td:nth-child(2){font-weight: bold;}</style>';
 			echo '<table><tr><th>Variable</th><th>Value</th></tr>';
+			// Loop through cURL response associative array
 			foreach ($curl_resp as $key => $value) {
 				echo '<tr><td>'.$key.'</td>';
-				$valtype = gettype($value);
+				$valtype = gettype($value); // variable type
 				switch($valtype){
 					case 'array':
 					$val2 = implode('',$value);
 					break;
-					
 					default:
 					$val2 = $value;
 					break;
-					
 				}
+				// print
 				echo '<td class="'.$valtype.'">'.$val2.'</td></tr>';
 			}
 			echo '</table>';
