@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Scrappy! - a php scraper</title>
+<meta name="description" content="A Web Scraper for the future!" />
+<!-- Twitter Card data -->
+<meta name="twitter:card" value="summary">
+<!-- Open Graph data -->
+<meta property="og:title" content="Scrappy!" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="./square.jpg" />
+<meta property="og:description" content="A barebones PHP Scraper for the future!" />
+<link rel="stylesheet" href="./style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<div id="logo"></div>
+<div id="info"> <!-- <a href="#intro">&#x1f517;</a> -->
+<form method="GET" action="/">
+<p id="intro">Scrape the web using Scrappy!<br>
+<input type="text" name="url" autocomplete="off" value="" size="40"><br>
+<button type="submit" value="">Scrappy Scrape</button>
+<button type="submit" name="url" value="http://archive.org">I'm feeling lucky</button><br>
+</center>
+</form>
+<p>Scrappy is a barebones API for scraping the world-wide-web! Unlike similar projects online, Scrappy is written <b>entirely</b> in PHP, and the base code is under 100 lines!</p>
+<p>Scrappy has plenty of usage:</p>
+<ol>
+<li>A Website blocked by your company or ISP? Scrappy can get around that no hassle!</li><br>
+<li>Is <em>cross-origin resource sharing</em> giving you a hard time? Wrap your URL through Scrappy and forget about it!</li><br>
+<li>Get a full copy of another website's HTML directly in your browser, plaintext, or even a JSON Object!</li><br>
+</ol>
+</div>
+<br><br><br>
+<div id="info2">
+<h2>API Usage</h2>
+<p>We support <b>GET</b> and <b>POST</b> HTTP methods! You can pass parameters using <b>application/x-www-form-urlencoded</b> or simple <a href="/?url=https://example.com">query strings</a> through your address bar.</p>
+<table>
+	<tr>
+		<th>Parameter</th>
+		<th>Type</th> 
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>url</td>
+		<td>String</td> 
+		<td><b>(Required)</b> The webpage we want to scrape. We support all files under 2 megabytes in size.</td>
+	</tr>
+	<tr>
+		<td>type</td>
+		<td>String</td> 
+		<td>The response format we want. Choose one depending on what you need: <em>html</em> for standard HTML output (the default), <em>plain</em> for barebones text-only output, or <em>json</em> for a JSON object.</td>
+	</tr>
+	<tr>
+		<td>resp</td>
+		<td>Boolean</td> 
+		<td>Print out the HTTP response information from cURL instead of the webpage. If the <em>type</em> paramater is set to "html" the info will be printed out in an HTML Table element. If the <em>type</em> paramater is set to "json" this is not required.</td>
+	</tr>
+	<tr>
+		<td>ua</td>
+		<td>String</td> 
+		<td>Specify the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent" target="_blank">User-Agent</a> that Scrappy will use when fetching.</td>
+	</tr>
+	<tr>
+		<td>r</td>
+		<td>String</td> 
+		<td>Specify the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer" target="_blank">Referer</a> that Scrappy will use when fetching.</td>
+	</tr>
+	
+</table>
+<br>
+<h1>Questions &amp; Answers</h1>
+<h3>What are the limits?</h3><p>Scrappy's only limits are 2 megabytes-per-request, and a maxiumum 5 second execution time, both for maximum performance. Any other limits are imposed by the hosting provider.</p><br>
+<h3>I want to help improve Scrappy!</h3><p>Scrappy's source code is available on <a href="https://github.com/89jgoldberg/Scrappy" target="_blank">GitHub</a>! I will try my best to monitor issues and pull requests</p><br>
+<h3>How can I Contact you?</h3><p>My name is Joe and you can reach me on my <a href="https://github.com/89jgoldberg/" target="_blank">GitHub</a> <script id="email">document.write(atob('b3IgPGEgaHJlZj0ibWFpbHRvOjg5amdvbGRiZXJnQGdtYWlsLmNvbT9zdWJqZWN0PVNjcmFwcHkgRmFuISI+ZW1haWwgbWU8L2E+'));var el = document.querySelector('#email');el.parentNode.removeChild(el);</script><noscript><em>(enable js to view my email, sorry spambots)</em></noscript>, I'll respond as soon as I can.</p><br>
+</div>
+</body>
+</html>

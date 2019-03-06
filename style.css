@@ -1,0 +1,39 @@
+a[href^="#"]{text-decoration:none;}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+#logo {
+	background-image: url('./scrappy.jpg');
+	width: 351px;
+	height: 113px;
+	margin: 0 auto;
+}
+
+#info,#info2 {
+	background-color: LightGrey;
+	margin: 0 auto;
+	width: 70%;
+	min-height: 40px;
+	text-align: center;
+	padding: 5px 10%;
+}
+#info ol {max-width:65%;margin: 0 auto;}
+}
+
+@media only screen and (max-width: 600px){
+	#info,#info2 {
+		background-color: LightGrey;
+		margin: 0 auto;
+		width: 95%;
+		min-height: 40px;
+		padding: 5px;
+	}
+	#info ol {max-width:90%;}
+}
+@media only screen and (min-width: 600px){
+	table {width:60%;margin: 0 auto;}
+}
